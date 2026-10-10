@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    --bg: #ebeef5;
+    --body: hsl(0, 0%, 0%);
+    --display: #f5f6f8;
+    --text: #1f2430;
+    --btn: #f2f3f6;
+    --btn-hover: #e7e9ee;
+    --op: #e8eefc;
+    --op-text: #3b6cf6;
+    --clear: #fdecec;
+    --clear-text: #e5484d;
+    --accent: #3b6cf6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg);
+    font-family: 'Inter', sans-serif;
+}
+
+/* Calculator body */
+.calculator {
+    width: 340px;
+    padding: 20px;
+    border-radius: 24px;
+    background: var(--body);
+    box-shadow: 0 10px 30px rgba(20, 30, 60, 0.12);
+}
+
+/* Display */
+.inner {
+    margin-bottom: 10px;
+}
+
+.inner input {
+    width: 100%;
+    height: 84px;
+    padding: 0 18px;
+    border: none;
+    outline: none;
+    border-radius: 16px;
+    background: var(--display);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 500;
+    text-align: right;
+}
+
+.inner input::placeholder {
+    color: var(--text);
+    opacity: 0.35;
+}
+
+/* Layout */
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 8px;
+}
+
+td {
+    width: 25%;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    height: 56px;
+    border: none;
+    border-radius: 14px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--text);
+    background: var(--btn);
+    transition: background 0.15s ease, transform 0.1s ease;
+}
+
+button:hover {
+    background: var(--btn-hover);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Operators */
+button.op {
+    background: var(--op);
+    color: var(--op-text);
+    font-weight: 600;
+}
+
+button.op:hover {
+    background: #d8e3fb;
+}
+
+/* AC / CLEAR */
+button.clear {
+    background: var(--clear);
+    color: var(--clear-text);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+button.clear:hover {
+    background: #fad9da;
+}
+
+/* Equal */
+button.equal {
+    background: var(--accent);
+    color: #fff;
+    font-weight: 600;
+}
+
+button.equal:hover {
+    background: #2f5ae0;
+}
+
+/* Mobile */
+@media (max-width: 400px) {
+    .calculator {
+        width: 94%;
+        padding: 16px;
+    }
+    button {
+        height: 52px;
+    }
+}
